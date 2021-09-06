@@ -1,5 +1,6 @@
 # Chia Plot Checker
 Simple app for checking Chia plots - names, sizes, keys and most important - whether plots are OG or NFT.
+Chia harvester (or whole Chia instance) running in the background is required.
 
 ## Running release
 1. Download latest release from [here](https://github.com/xchgarden/Chia-Plot-Checker/releases)
