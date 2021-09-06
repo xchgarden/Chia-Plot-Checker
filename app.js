@@ -12,7 +12,7 @@ function getPlots(){
     return new Promise((resolve, reject) => {
         get_plots(agent).then((response) => {
             plots = response.plots;
-            console.log("Plots loaded.")
+            console.log("Plots loaded.\n")
             resolve();
         })
     });
@@ -32,22 +32,22 @@ function showAllPlots(){
 }
 
 function showInfo(){
-    console.log("Chia harvester reported "+plots.length+" plots.")
     let uniquePc = []
     let nftNum = 0;
     let ogNum = 0;
     for (let plot of plots){
         if(plot.pool_contract_puzzle_hash == null){
-            ogNum = ogNum + 1;
+            ogNum = ogNum + 1
         }
         else{
-            nftNum = nftNum + 1;
+            nftNum = nftNum + 1
             if(!uniquePc.includes(plot.pool_contract_puzzle_hash)){
                 uniquePc.push(plot.pool_contract_puzzle_hash)
             }
         } 
     }
     console.log(uniquePc.length+" unique pool contract adresses")
+    console.log(plots.length+" plots total")
     console.log(nftNum+" NFT plots ("+(nftNum/plots.length*100).toFixed(2)+"%)")
     console.log(ogNum+" OG plots ("+(ogNum/plots.length*100).toFixed(2)+"%)")
 }
@@ -59,6 +59,8 @@ function showAllOgPlots(){
         }
     }
 }
+
+console.log("Chia plot checker v.1.0 by mssc@xch.garden (check our pool out!)\n")
 
 switch (args[0]) {
     case '-h':
@@ -73,18 +75,18 @@ switch (args[0]) {
     case '-a':
         plotsPromise = getPlots()
         plotsPromise.then(() => {
-            showAllPlots();
+            showAllPlots()
         })
         break;
     case '-og':
         plotsPromise = getPlots()
         plotsPromise.then(() => {
-            showAllOgPlots();
+            showAllOgPlots()
         })
         break;
     default:
         plotsPromise = getPlots()
         plotsPromise.then(() => {
-            showInfo();
+            showInfo()
         })
 }

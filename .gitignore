@@ -1,2 +1,6 @@
 node_modules
 package-lock.json
+app-linux
+app-macos
+app-win.exe
+build.sh
