@@ -1,7 +1,7 @@
 const {RPCAgent} = require("chia-agent");
 const {get_plots} = require("chia-agent/api/rpc/harvester");
 const agent = new RPCAgent({service: "harvester"});
-const response = await get_plots(agent);
+const response = get_plots(agent);
 
 console.log("Chia reported "+response.plots.length+" plots.")
 console.log("-----")
