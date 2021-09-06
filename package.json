@@ -1,0 +1,14 @@
+{
+  "name": "chia-plot-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mssc",
+  "license": "ISC",
+  "dependencies": {
+    "chia-agent": "^2.0.3"
+  }
+}
